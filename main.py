@@ -17,7 +17,7 @@ def image_download(local_filename, file_number, lenght):
             for chunk in r.iter_content(chunk_size=8192):
                 if chunk:
                     f.write(chunk)
-        print(f"[{file_number}/{lenght}] Downloaded {save_name}")
+        print(f"[{file_number+1}/{lenght}] Downloaded {save_name}")
 
 images = [line for line in lines if 'href="/download' in line and 'data-id' in line]
 for x, image in enumerate(images):
