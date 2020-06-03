@@ -12,7 +12,7 @@ def image_download(local_filename, file_number, lenght):
     image_url = f'{main_url}{local_filename}'
     with requests.get(image_url, stream=True) as r:
         r.raise_for_status()
-        save_name = local_filename.split("/")[2] 
+        save_name = f'{local_filename.split("/")[2]}.jpg'
         with open(save_name, 'wb+') as f:
             for chunk in r.iter_content(chunk_size=8192):
                 if chunk:
