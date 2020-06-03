@@ -19,7 +19,7 @@ def image_download(local_filename, file_number, lenght):
                     f.write(chunk)
         print(f"[{file_number}/{lenght}] Downloaded {save_name}")
 
-image = [line for line in lines if 'href="/download' in line and 'data-id' in line]
-for x, image in enumerate(image):
+images = [line for line in lines if 'href="/download' in line and 'data-id' in line]
+for x, image in enumerate(images):
     file_name = image.split('"')[1]
-    image_download(file_name, x, len(image))
+    image_download(file_name, x, len(images))
